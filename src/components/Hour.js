@@ -29,10 +29,10 @@ const Hour = (props) => {
       <Form.Label>Choose Hour</Form.Label>
       <Form.Control
         as="select"
+        htmlSize={3}
         onChange={props.handleHour}
         className={styles.options}
       >
-        <option value={-1}>Select Hour</option>
         {hourItems}
       </Form.Control>
     </Form.Group>

@@ -39,8 +39,7 @@ const Time = (props) => {
   return (
     <Form.Group>
       <Form.Label>Choose Slot</Form.Label>
-      <Form.Control as="select" onChange={props.handleSlots}>
-        <option value={-1}>Select Time</option>
+      <Form.Control as="select" htmlSize={3} onChange={props.handleSlots}>
         {slotItems}
       </Form.Control>
     </Form.Group>

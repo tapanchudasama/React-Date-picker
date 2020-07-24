@@ -18,6 +18,7 @@ const Date = (props) => {
       <Form.Label>Choose Date</Form.Label>
       <Form.Control
         as="select"
+        htmlSize={3}
         onChange={props.handleDate}
         className={styles.options}
       >
