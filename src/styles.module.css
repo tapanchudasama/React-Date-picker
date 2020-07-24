@@ -5,14 +5,3 @@ h3 {
   margin-top: 10%;
   padding: 0;
 }
-.error {
-  color: red;
-  text-align: center;
-}
-.success {
-  color: blue;
-  text-align: center;
-}
-.options {
-  color: blue;
-}
