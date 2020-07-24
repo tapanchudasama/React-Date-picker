@@ -5,9 +5,10 @@ import styles from "../styles.module.css";
 
 const Hour = (props) => {
   const [hour, setHour] = useState("");
+  console.log(hour);
   useEffect(() => {
     setHour(props.hour);
-  }, [props.hourkey,props.hour]);
+  }, [props.hourkey, props.hour]);
   var hourItems;
   if (
     props.hourkey !== -1 &&

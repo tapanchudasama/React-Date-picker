@@ -5,9 +5,10 @@ import data from "../data.json";
 const Time = (props) => {
   const [time, setTime] = useState("");
 
+  console.log(time);
   useEffect(() => {
     setTime(props.time);
-  }, [props.hourkey, props.slotkey]);
+  }, [props.hourkey, props.slotkey, props.time]);
 
   var slotItems;
   if (
