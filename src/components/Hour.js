@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import data from "../data.json";
-import styles from '../styles.module.css';
+import styles from "../styles.module.css";
+
 const Hour = (props) => {
+  const [hour, setHour] = useState("");
+  useEffect(() => {
+    setHour(props.hour);
+  }, [props.hourkey,props.hour]);
   var hourItems;
   if (
     props.hourkey !== -1 &&
@@ -21,7 +26,11 @@ const Hour = (props) => {
   return (
     <Form.Group>
       <Form.Label>Choose Hour</Form.Label>
-      <Form.Control as="select" onChange={props.handleHour} className={styles.options}>
+      <Form.Control
+        as="select"
+        onChange={props.handleHour}
+        className={styles.options}
+      >
         <option value={-1}>Select Hour</option>
         {hourItems}
       </Form.Control>

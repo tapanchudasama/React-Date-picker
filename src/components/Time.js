@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "react-bootstrap";
 import data from "../data.json";
 
 const Time = (props) => {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    setTime(props.time);
+  }, [props.hourkey, props.slotkey]);
+
   var slotItems;
-  console.log(props);
   if (
     props.hourkey !== -1 &&
     props.slotkey !== -1 &&
@@ -16,11 +21,11 @@ const Time = (props) => {
     ].hour_slots.map((obj, i) =>
       Object.keys(obj).map((current, j) => (
         <option
-          key={i}
-          value={
+          key={j}
+          value={JSON.stringify(
             data.available_slots[props.hourkey].date_slots[props.slotkey]
               .hour_slots[j]
-          }
+          )}
         >
           {current}
         </option>
@@ -29,6 +34,7 @@ const Time = (props) => {
   } else {
     slotItems = "";
   }
+
   return (
     <Form.Group>
       <Form.Label>Choose Slot</Form.Label>
